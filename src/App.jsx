@@ -9,9 +9,11 @@ import Works from "./sections/Works";
 import ContactSummary from "./sections/ContactSummary";
 import Contact from "./sections/Contact";
 import { useProgress } from "@react-three/drei";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Lead from "./pages/lead";
 //
 
-const App = () => {
+const Home = () => {
   const { progress } = useProgress();
   const [isReady, setIsReady] = useState(false);
 
@@ -51,6 +53,18 @@ const App = () => {
         <Contact />
       </div>
     </ReactLenis>
+  );
+};
+
+
+ const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/creator-tool/lead" element={<Lead />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
