@@ -57,7 +57,7 @@ export default function Lead() {
         .cie-root {
           min-height: 100vh;
           background: var(--cream);
-          font-family: 'Inter', sans-serif;
+          font-family: "Amiamie", sans-serif;
           color: var(--black);
           overflow-x: hidden;
           position: relative;
@@ -119,7 +119,7 @@ export default function Lead() {
           display:flex;align-items:center;justify-content:center;font-size:15px;
         }
         .logoname {
-          font-family:'Syne',sans-serif; font-weight:700; font-size:14px;
+          font-family:"Amiamie",sans-serif; font-weight:700; font-size:14px;
         }
         .stagepill {
           margin-left:auto; background:var(--black); color:var(--cream);
@@ -133,15 +133,15 @@ export default function Lead() {
         @keyframes blink{0%,100%{opacity:1;}50%{opacity:.25;}}
 
         .hl {
-          font-family:'Syne',sans-serif; font-weight:800;
-          font-size:clamp(40px,5.8vw,66px); line-height:.98; letter-spacing:-.025em;
+          font-family:"Amiamie",sans-serif; font-weight:800;
+          font-size:clamp(52px,7vw,86px); line-height:.98; letter-spacing:-.025em;
           margin-bottom:18px;
         }
         .hl-outline { color:transparent; -webkit-text-stroke:2.5px var(--black); }
         .hl-accent  { color:var(--accent); }
 
         .subtext {
-          font-size:14.5px; font-weight:300; color:#555; line-height:1.75;
+          font-size:18px; font-weight:300; color:#555; line-height:1.75;
           max-width:400px; margin-bottom:38px;
         }
 
@@ -169,10 +169,10 @@ export default function Lead() {
         .bp-head {
           background:var(--black); color:var(--cream);
           padding:13px 20px; display:flex; align-items:center; justify-content:space-between;
-          font-family:'Syne',sans-serif; font-size:12px; font-weight:600;
+          font-family:"Amiamie",sans-serif; font-size:12px; font-weight:600;
           letter-spacing:.08em; text-transform:uppercase;
         }
-        .bp-head span { opacity:.4; font-size:10px; font-family:'Inter',sans-serif; font-weight:400; letter-spacing:.06em; }
+        .bp-head span { opacity:.4; font-size:10px; font-family:"Amiamie",sans-serif; font-weight:400; letter-spacing:.06em; }
 
         .frow {
           display:flex; align-items:center; gap:14px;
@@ -211,7 +211,7 @@ export default function Lead() {
         @media(max-width:840px){ .fcard{padding:28px 22px 24px;} }
 
         .f-eyebrow { font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px; }
-        .f-title   { font-family:'Syne',sans-serif;font-weight:700;font-size:22px;line-height:1.2;margin-bottom:6px; }
+        .f-title   { font-family:"Amiamie",sans-serif;font-weight:700;font-size:28px;line-height:1.2;margin-bottom:6px; }
         .f-desc    { font-size:13px;color:#888;font-weight:300;line-height:1.65;margin-bottom:26px; }
         .f-desc strong{color:var(--black);font-weight:500;}
 
@@ -220,7 +220,7 @@ export default function Lead() {
         .req   { color:var(--accent); margin-left:2px; }
         .f-inp {
           width:100%;padding:12px 14px;border:1.5px solid #e5e2dc;
-          border-radius:11px;background:#faf9f7;font-family:'Inter',sans-serif;
+          border-radius:11px;background:#faf9f7;font-family:"Amiamie",sans-serif;
           font-size:14px;color:var(--black);outline:none;
           transition:border-color .2s,background .2s,box-shadow .2s; -webkit-appearance:none;
         }
@@ -230,7 +230,7 @@ export default function Lead() {
         .ctabtn {
           width:100%;padding:15px 20px;margin-top:8px;
           background:var(--black);color:var(--cream);border:none;border-radius:12px;
-          font-family:'Syne',sans-serif;font-size:14px;font-weight:700;letter-spacing:.04em;
+          font-family:"Amiamie",sans-serif;font-size:16px;font-weight:700;letter-spacing:.04em;
           cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;
           transition:transform .15s,box-shadow .15s; position:relative; overflow:hidden;
         }
@@ -261,7 +261,7 @@ export default function Lead() {
         /* Success */
         .suc { text-align:center; padding:10px 0 6px; animation:up .5s cubic-bezier(.22,1,.36,1); }
         .suc-icon { width:68px;height:68px;border-radius:50%;background:var(--black);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 20px; }
-        .suc-h  { font-family:'Syne',sans-serif;font-weight:800;font-size:28px;margin-bottom:10px; }
+        .suc-h  { font-family:"Amiamie",sans-serif;font-weight:800;font-size:36px;margin-bottom:10px; }
         .suc-p  { font-size:13.5px;color:#888;font-weight:300;line-height:1.7;margin-bottom:22px; }
         .suc-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:8px; }
         .stag { background:var(--cream);border:1.5px solid var(--border);border-radius:999px;font-size:12px;padding:5px 13px;color:#555; }
