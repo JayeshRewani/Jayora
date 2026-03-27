@@ -55,6 +55,24 @@ export default function Lead() {
         .lead-handwritten {
           font-family: "Gochi Hand", cursive;
         }
+        /* Reliable :active on iOS; tap highlight off for custom buttons */
+        .lead-tap {
+          -webkit-tap-highlight-color: transparent;
+          touch-action: manipulation;
+        }
+        @keyframes lead-cta-pop {
+          0% { transform: scale(1); }
+          40% { transform: scale(0.97); }
+          100% { transform: scale(1); }
+        }
+        .lead-cta-animate:not(:disabled):active .lead-cta-inner {
+          animation: lead-cta-pop 0.35s ease;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .lead-cta-animate:not(:disabled):active .lead-cta-inner {
+            animation: none;
+          }
+        }
       `}</style>
 
       <div
@@ -104,7 +122,7 @@ export default function Lead() {
                     <span className="lead-ms block text-3xl rotate-[20deg]">north_east</span>
                   </div>
                 </div>
-                <div className="bg-[#131313] p-6 border-4 border-[#a1a6ff] shadow-[6px_6px_0px_0px_#ff55f1] transition-all hover:-translate-y-1 active:translate-y-0.5">
+                <div className="lead-tap bg-[#131313] p-6 border-4 border-[#a1a6ff] shadow-[6px_6px_0px_0px_#ff55f1] transition-all duration-200 hover:-translate-y-1 active:translate-y-0.5">
                   <label
                     htmlFor="lead-instagram"
                     className="block font-['Space_Grotesk',sans-serif] font-bold text-xs uppercase tracking-widest text-[#5860ff] mb-2"
@@ -129,7 +147,7 @@ export default function Lead() {
               </div>
 
               {/* Name Field */}
-              <div className="bg-[#191919] p-6 border-4 border-[#262626] shadow-[6px_6px_0px_0px_#a1a6ff] rotate-[1deg]">
+              <div className="lead-tap bg-[#191919] p-6 border-4 border-[#262626] shadow-[6px_6px_0px_0px_#a1a6ff] rotate-[1deg] transition-transform duration-200 hover:-translate-y-0.5 active:-translate-y-0.5 active:scale-[0.995]">
                 <label
                   htmlFor="lead-name"
                   className="block font-['Space_Grotesk',sans-serif] font-bold text-xs uppercase tracking-widest text-[#ababab] mb-2"
@@ -152,7 +170,7 @@ export default function Lead() {
 
               {/* Email Field */}
               <div className="relative">
-                <div className="bg-[#131313] p-6 border-4 border-[#ff55f1] shadow-[6px_6px_0px_0px_#191919] -rotate-[1deg]">
+                <div className="lead-tap bg-[#131313] p-6 border-4 border-[#ff55f1] shadow-[6px_6px_0px_0px_#191919] -rotate-[1deg] transition-transform duration-200 hover:-translate-y-0.5 active:-translate-y-0.5 active:scale-[0.995]">
                   <label
                     htmlFor="lead-email"
                     className="block font-['Space_Grotesk',sans-serif] font-bold text-xs uppercase tracking-widest text-[#ff55f1] mb-2"
@@ -183,9 +201,9 @@ export default function Lead() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-[#ff55f1] text-black font-['Space_Grotesk',sans-serif] font-black text-2xl py-6 uppercase tracking-tighter shadow-[8px_8px_0px_0px_#a1a6ff] hover:shadow-[4px_4px_0px_0px_#a1a6ff] hover:translate-x-1 hover:translate-y-1 transition-all active:scale-95 group disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0"
+                  className="lead-tap lead-cta-animate w-full bg-[#ff55f1] text-black font-['Space_Grotesk',sans-serif] font-black text-2xl py-6 uppercase tracking-tighter shadow-[8px_8px_0px_0px_#a1a6ff] transition-all duration-150 ease-out select-none group outline-none focus-visible:ring-2 focus-visible:ring-[#a1a6ff] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e0e0e] hover:shadow-[4px_4px_0px_0px_#a1a6ff] hover:translate-x-1 hover:translate-y-1 active:shadow-[4px_4px_0px_0px_#a1a6ff] active:translate-x-1 active:translate-y-1 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:active:scale-100 disabled:active:translate-x-0 disabled:active:translate-y-0 disabled:shadow-[8px_8px_0px_0px_#a1a6ff]"
                 >
-                  <div className="flex items-center justify-center gap-3 group-hover:scale-110 transition-transform">
+                  <div className="lead-cta-inner flex items-center justify-center gap-3 transition-transform duration-150 ease-out group-hover:scale-110 group-active:scale-110 will-change-transform">
                     {loading ? "Generating…" : "Generate My Ideas"}
                     <span className={`lead-ms text-4xl ${loading ? "" : "lead-ms-fill"}`}>bolt</span>
                   </div>
@@ -227,7 +245,7 @@ export default function Lead() {
                 Recent Wins
               </h2>
             </div>
-            <div className="md:col-span-7 bg-[#1f1f1f] p-6 border-2 border-[#484848] rotate-[-1deg] relative overflow-hidden group">
+            <div className="lead-tap md:col-span-7 bg-[#1f1f1f] p-6 border-2 border-[#484848] rotate-[-1deg] relative overflow-hidden group transition-transform duration-200 active:scale-[0.995]">
               <div className="flex justify-between items-start mb-6">
                 <div>
                   <span className="bg-[#00fdc1] text-[#005c44] text-[10px] font-bold px-2 py-0.5 rounded-none uppercase">
@@ -242,7 +260,7 @@ export default function Lead() {
               <div className="h-48 w-full bg-zinc-900 overflow-hidden mb-4">
                 <img
                   alt="Lo-fi creative desk with neon lights"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-active:grayscale-0 transition-all duration-500"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCksD-lAt6yz5ugsGuRmSvZjNNpOX4tgt3ZMBa0cE8VW0DHov_te4_8jiFEkTzk6Ws2Js1nETgfQmjWGDt1ISMG9Ghh2uWWiDOk_HNvMz8YgyNKYtdFP_O_zK06nxHP0t848s9Y6SuiwT3KmyNPCkx7J4moS7WFt6yMDn1mNVHr18hrE9ATsbbhshHQXnByOAGtRRXLalJIrhLK5d2BhRSdyHTZlmcLahXHqXV54m0k_3MSCHYTzEGl8MdroG-7cEpUZjnh_yovV6bA"
                 />
               </div>
